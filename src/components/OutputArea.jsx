@@ -1,10 +1,10 @@
-function OutputArea() {
+function OutputArea({ list }) {
   return (
     <>
       <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
+        {list.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
       </ul>
     </>
   );
