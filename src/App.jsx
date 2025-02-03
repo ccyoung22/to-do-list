@@ -1,30 +1,26 @@
 import { useState } from "react";
-import "./App.css";
-import InputArea from "./components/InputArea";
 import OutputArea from "./components/OutputArea";
+import InputArea from "./components/InputArea";
 
 function App() {
   const [list, setList] = useState([]);
 
-  function addNewListItem(newListItem) {
-    setList([...list, newListItem]);
+  function addListItem(newListItem) {
+    return setList([...list, newListItem]);
   }
 
   return (
     <>
-      <InputArea addNewListItem={addNewListItem} />
+      <InputArea addListItem={addListItem} />
       <OutputArea list={list} />
     </>
   );
 }
-
 export default App;
 
-//set list state is defined in the app
-//set list function is defined in the app
-//a function is defined in app which take the list array and generates a new list item with the input from the input area via a call back function
-
-//An output area that contains-
-//A list of to do items that can be checked off
-//an input area -
-// a form element that allows input of items to be added to the list
+//use stat eimpoted
+//app component created
+//track the state of the list here
+//a function that adds a new list item, itside the function takes the currect list state and adds a new item to it
+//returns the input area whihc is passed a fucntion
+//and the output area whihc is passed what it needs
