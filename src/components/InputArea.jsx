@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-function InputArea({ addListItem }) {
+function InputArea({ addNewListItem }) {
   const [input, setInput] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
-    addListItem(input);
+    addNewListItem(input);
+    console.group(input);
     setInput("");
   }
 
@@ -13,11 +15,11 @@ function InputArea({ addListItem }) {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          placeholder="Add Item"
           value={input}
-          placeholder="Add an item"
           onChange={(e) => setInput(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button type="sumbit">Submit</button>
       </form>
     </>
   );

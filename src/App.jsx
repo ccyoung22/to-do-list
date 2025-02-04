@@ -5,19 +5,21 @@ import InputArea from "./components/InputArea";
 function App() {
   const [list, setList] = useState([]);
 
-  function addListItem(newListItem) {
-    return setList([...list, newListItem]);
+  function addNewListItem(newListItem) {
+    const newList = setList([...list, newListItem]);
+    console.log(newList);
+    return newList;
   }
 
   return (
     <>
-      <InputArea addListItem={addListItem} />
+      <InputArea addNewListItem={addNewListItem} />
       <OutputArea list={list} />
     </>
   );
 }
-export default App;
 
+export default App;
 //use stat eimpoted
 //app component created
 //track the state of the list here
