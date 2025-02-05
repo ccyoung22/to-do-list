@@ -1,20 +1,10 @@
 import { useState } from "react";
-import OutputArea from "./components/OutputArea";
-import InputArea from "./components/InputArea";
+import ToDoList from "./components/ToDoList/ToDoList.jsx";
 
 function App() {
-  const [list, setList] = useState([]);
-
-  function addNewListItem(newListItem) {
-    const newList = setList([...list, newListItem]);
-    console.log(newList);
-    return newList;
-  }
-
   return (
     <>
-      <InputArea addNewListItem={addNewListItem} />
-      <OutputArea list={list} />
+      <ToDoList />
     </>
   );
 }
